@@ -103,9 +103,8 @@ class SessionManagerImpl {
     toolRegistry.register(new ImportEstateConfigZipTool(estateUrl, emAuth));
     toolRegistry.register(new FetchEstateConfigTool(estateUrl, emAuth));
 
-    const permitAll = new PermissionManager();
     engine.registerTools(toolRegistry.getDefinitions(), (name, args) => {
-      return toolRegistry.execute(name, args, permitAll);
+      return toolRegistry.execute(name, args);
     });
 
     DebugLogger.log(
