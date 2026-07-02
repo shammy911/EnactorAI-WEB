@@ -1,0 +1,24 @@
+{
+  "name": "enactor-estate",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:core": "npm run build --workspace=packages/core",
+    "dev:server": "npm run dev --workspace=packages/server",
+    "build:server": "npm run build --workspace=packages/server",
+    "build:all": "npm run build:core && npm run build:server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "allowScripts": {
+    "sharp@0.34.5": true,
+    "unrs-resolver@1.12.2": true
+  }
+}

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+.env.local
+*.tgz
+.next/
+packages/extension/build/
+packages/extension/dist/
