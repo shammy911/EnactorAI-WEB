@@ -15,7 +15,6 @@ export default function Home() {
     messages,
     isLoading,
     isStreaming,
-    activeToolStatus,
     sendMessage,
     clearMessages,
     stop,
@@ -34,7 +33,7 @@ export default function Home() {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages, isStreaming, isLoading, scrollToBottom, activeToolStatus]);
+  }, [messages, isStreaming, isLoading, scrollToBottom]);
 
   const handleSelectPrompt = useCallback((prompt: string) => {
     setPendingPrompt(prompt);
@@ -82,19 +81,6 @@ export default function Home() {
 
               {showTyping && <TypingIndicator />}
 
-              {/* Tool status */}
-              {activeToolStatus && (
-                <div
-                  className="flex items-center gap-2 py-2 px-4 text-xs rounded-lg animate-pulse w-fit"
-                  style={{
-                    background: "var(--accent-glow)",
-                    color: "var(--accent)",
-                  }}
-                >
-                  <LoaderPinwheel className="h-4 w-4 animate-spin" />
-                  {activeToolStatus}
-                </div>
-              )}
             </div>
           )}
         </div>

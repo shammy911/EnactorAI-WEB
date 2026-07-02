@@ -6,3 +6,4 @@ dist/
 .next/
 packages/extension/build/
 packages/extension/dist/
+enactor-debug.log
