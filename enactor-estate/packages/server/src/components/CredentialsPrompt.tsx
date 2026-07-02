@@ -42,10 +42,15 @@ export default function CredentialsPrompt() {
       return;
     }
 
-    // Clean up trailing slashes
-    const cleanUrl = estateUrl.endsWith("/")
-      ? estateUrl.slice(0, -1)
-      : estateUrl;
+    // Sanitize URL: Strip anything after /WebMaintenance and remove trailing slashes
+    let cleanUrl = estateUrl;
+    const wmIndex = cleanUrl.toLowerCase().indexOf("/webmaintenance");
+    if (wmIndex !== -1) {
+      cleanUrl = cleanUrl.substring(0, wmIndex + "/WebMaintenance".length);
+    }
+    if (cleanUrl.endsWith("/")) {
+      cleanUrl = cleanUrl.slice(0, -1);
+    }
 
     // Create Basic Auth string: Basic base64(username:password)
     const encoded = btoa(`${username}:${password}`);
