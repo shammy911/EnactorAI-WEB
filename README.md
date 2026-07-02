@@ -17,12 +17,12 @@ enactor-estate/
 └── .env               # Environment configuration
 ```
 
-| Layer | Technology | Purpose |
-|---|---|---|
-| **Frontend** | Next.js 16 + React 19 + Tailwind CSS 4 | Chat UI with streaming responses |
-| **API** | Next.js Route Handlers (SSE) | `/api/chat` streams AI responses to the browser |
-| **Core Engine** | TypeScript (`@enactor-estate/core`) | LLM client, tool registry, conversation management |
-| **LLM** | Any OpenAI-compatible API | Generates responses and decides which tools to call |
+| Layer           | Technology                             | Purpose                                             |
+| --------------- | -------------------------------------- | --------------------------------------------------- |
+| **Frontend**    | Next.js 16 + React 19 + Tailwind CSS 4 | Chat UI with streaming responses                    |
+| **API**         | Next.js Route Handlers (SSE)           | `/api/chat` streams AI responses to the browser     |
+| **Core Engine** | TypeScript (`@enactor-estate/core`)    | LLM client, tool registry, conversation management  |
+| **LLM**         | Any OpenAI-compatible API              | Generates responses and decides which tools to call |
 
 ---
 
@@ -65,7 +65,7 @@ Or create it manually with the following contents:
 ```env
 # ── LLM Configuration (required) ──────────────────────────────────────────
 # URL of your OpenAI-compatible chat completions endpoint
-LLM_URL=http://localhost:8090/v1/chat/completions
+LLM_URL=llm-url
 
 # Model name as expected by your LLM server
 LLM_MODEL=your-model-name
@@ -85,7 +85,7 @@ LLM_ENABLE_THINKING=true
 
 # ── MCP Servers (optional) ─────────────────────────────────────────────────
 # Remote MCP server URL for advanced Estate Manager operations
-ENACTOR_REMOTE_MCP_URL=http://your-mcp-server:8969/sse
+ENACTOR_REMOTE_MCP_URL=mcp-url
 ```
 
 > [!IMPORTANT]
@@ -124,12 +124,12 @@ The app will be available at **http://localhost:3000**.
 
 Run these from the `enactor-estate/` root:
 
-| Command | Description |
-|---|---|
-| `npm run dev:server` | Start the Next.js dev server with hot reload |
-| `npm run build:core` | Compile the `@enactor-estate/core` TypeScript package |
+| Command                | Description                                                  |
+| ---------------------- | ------------------------------------------------------------ |
+| `npm run dev:server`   | Start the Next.js dev server with hot reload                 |
+| `npm run build:core`   | Compile the `@enactor-estate/core` TypeScript package        |
 | `npm run build:server` | Production build of the Next.js app (auto-builds core first) |
-| `npm run build:all` | Build both `core` and `server` |
+| `npm run build:all`    | Build both `core` and `server`                               |
 
 ---
 
@@ -197,15 +197,15 @@ enactor-estate/
 
 ## Environment Variables Reference
 
-| Variable | Required | Default | Description |
-|---|---|---|---|
-| `LLM_URL` | ✅ | — | OpenAI-compatible chat completions endpoint |
-| `LLM_MODEL` | ✅ | — | Model name for the LLM server |
-| `LLM_API_KEY` | ❌ | `""` | API key if your LLM server requires auth |
-| `LLM_TEMPERATURE` | ❌ | `0.6` | Sampling temperature |
-| `LLM_MAX_TOKENS` | ❌ | `60000` | Max response tokens |
-| `LLM_ENABLE_THINKING` | ❌ | `true` | Enable extended thinking mode |
-| `ENACTOR_REMOTE_MCP_URL` | ❌ | — | Remote MCP server for advanced operations |
+| Variable                 | Required | Default | Description                                 |
+| ------------------------ | -------- | ------- | ------------------------------------------- |
+| `LLM_URL`                | ✅       | —       | OpenAI-compatible chat completions endpoint |
+| `LLM_MODEL`              | ✅       | —       | Model name for the LLM server               |
+| `LLM_API_KEY`            | ❌       | `""`    | API key if your LLM server requires auth    |
+| `LLM_TEMPERATURE`        | ❌       | `0.6`   | Sampling temperature                        |
+| `LLM_MAX_TOKENS`         | ❌       | `60000` | Max response tokens                         |
+| `LLM_ENABLE_THINKING`    | ❌       | `true`  | Enable extended thinking mode               |
+| `ENACTOR_REMOTE_MCP_URL` | ❌       | —       | Remote MCP server for advanced operations   |
 
 ---
 
