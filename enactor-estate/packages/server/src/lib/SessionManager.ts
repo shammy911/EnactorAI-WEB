@@ -167,7 +167,7 @@ class SessionManagerImpl {
       name: llmModel,
       api_key: "",
       temperature: parseFloat(process.env.LLM_TEMPERATURE || "0.6"),
-      max_tokens: parseInt(process.env.LLM_MAX_TOKENS || "16384", 10),
+      max_tokens: parseInt(process.env.LLM_MAX_TOKENS || "60000", 10),
       enable_thinking: process.env.LLM_ENABLE_THINKING !== "false",
     });
 
