@@ -54,7 +54,7 @@ npm install
 
 ### 3. Configure environment variables
 
-Create a `.env` and `.env.local` files inside `/` and `packages/server/` respectively using the `.env.example`, `.env.local.example` files inside those directories:
+Create a `.env` and `.env.local` files inside `enactor-estate/` and `packages/server/` respectively using the `.env.example`, `.env.local.example` files inside those directories:
 
 ```bash
 cp .env.example .env
