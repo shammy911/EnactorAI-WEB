@@ -54,38 +54,11 @@ npm install
 
 ### 3. Configure environment variables
 
-Create a `.env.local` file inside `packages/server/`:
+Create a `.env` and `.env.local` files inside `/` and `packages/server/` respectively using the `.env.example`, `.env.local.example` files inside those directories:
 
 ```bash
+cp .env.example .env
 cp packages/server/.env.local.example packages/server/.env.local
-```
-
-Or create it manually with the following contents:
-
-```env
-# ── LLM Configuration (required) ──────────────────────────────────────────
-# URL of your OpenAI-compatible chat completions endpoint
-LLM_URL=llm-url
-
-# Model name as expected by your LLM server
-LLM_MODEL=your-model-name
-
-# API key (leave empty if your server doesn't require one)
-LLM_API_KEY=
-
-# ── LLM Tuning (optional) ─────────────────────────────────────────────────
-# Controls randomness (0.0 = deterministic, 1.0 = creative). Default: 0.6
-LLM_TEMPERATURE=0.6
-
-# Maximum tokens in the response. Default: 60000
-LLM_MAX_TOKENS=60000
-
-# Enable extended thinking/reasoning. Default: true
-LLM_ENABLE_THINKING=true
-
-# ── MCP Servers (optional) ─────────────────────────────────────────────────
-# Remote MCP server URL for advanced Estate Manager operations
-ENACTOR_REMOTE_MCP_URL=mcp-url
 ```
 
 > [!IMPORTANT]

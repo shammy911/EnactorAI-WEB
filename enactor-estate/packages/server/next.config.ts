@@ -13,10 +13,7 @@ const nextConfig: NextConfig = {
   transpilePackages: ["@enactor-estate/core"],
 
   // Enable server-side features
-  serverExternalPackages: [
-    "@modelcontextprotocol/sdk",
-    "eventsource",
-  ],
+  serverExternalPackages: ["@modelcontextprotocol/sdk", "eventsource"],
 };
 
 export default nextConfig;
