@@ -185,3 +185,9 @@ enactor-estate/
 ## License
 
 See [LICENSE](LICENSE) for details.
+
+---
+
+## Entity Creation Guides with EnactorAI - WEB
+
+- **[Creating a Payment Device on EM](https://enactor.atlassian.net/wiki/x/AoD4-wY)**
